@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(imgs/fundo.jpeg);
+    background-attachment: fixed;
+    background-size: 100% 1080px;
+    background-repeat: no-repeat;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.container .form
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container .form form
+{
+    position: relative;
+    width: 100%;
+    padding: 0px;
+}
+
+.container .form form h2
+{
+    color: #000000;
+    font-weight: bolder;
+    font-size: 35px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container .form form h4
+{
+    color: grey;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.container .form form input[type="email"], input[type="password"]
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 20px;
+    border: solid 1px rgb(119, 117, 117);
+    border-radius: 6px;
+    align-self: center;
+    cursor: auto;
+    margin: 8px 0;
+    width: 350px;
+}
+
+.container .form form input[type="submit"]
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    align-self: center;
+    background-color: #252222;
+    color: #ffffff;
+    cursor:pointer;
+    margin: 8px 0;
+    width: 350px;
+}
+.outside
+{
+    font-size: 14px;
+    font-weight:lighter;
+    color: #ffffff; 
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    width:100%; 
+    height:auto;
+    padding:4px;
+    
+}
+
+input[type="submit"]:hover
+{
+opacity: 0.8;
+}
