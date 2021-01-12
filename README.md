@@ -1,4 +1,4 @@
 # TCC
- My final paper developement in ETEC.
+ My final paper development in ETEC.
 
  This is my first repository. :)
