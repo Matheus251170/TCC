@@ -37,7 +37,7 @@
 
     <div class="under" style="background-color:#252222">
         <p style="color: #ffffff;">Ainda não tem conta?</p>
-        <span><a style="color: rgb(230, 149, 0);" href="TelaCadastrodeCliente.php">Cadastre-se</a></span>
+        <span><a style="color: rgb(230, 149, 0);" href="TelaCadastrodeCliente.php" rel = "next">Cadastre-se</a></span>
     </div>
   </form>
 </div>
