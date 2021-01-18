@@ -4,118 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tela de Cadastro de Usuario</title>
-
-  <style>
-    /* geral */
-   *{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: Helvetica, sans-serif;
-   color: #323232;
-   border: none;
-  }
-
-   input, label {
-   display: block;
-   outline: none;
-   width: 100%;
-  }
-
-   a {
-   color: #ff0000;
-  }
-
-   body {
-   padding-top: 5vh;
-   background-image: url('imgs/haha.JPG');
-   background-size: cover;
-   background-position-y: auto;
-  }
-
-   /* form */
-   #main-container {
-   width: 800px;
-   height: 850px;
-   margin-left: auto;
-   margin-right: auto;
-   background-color: #FFF;
-   border-radius: 10px;
-   padding: 25px;
-  }
-
-   #main-container h1 {
-   text-align: center;
-   margin-bottom: 25px;
-   font-size: 1.6rem;
-  }
-
-   form {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-  }
-
-   .full-box {
-   flex: 1 1 100%;
-   position: relative;
-  }
-
-   .half-box {
-   flex: 1 1 45%;
-   position: relative;
-  }
-
-   .spacing {
-   margin-right: 2.5%;
- }
-
-   label {
-   font-weight: bold;
-   font-size: .8rem;
-  }
-
-   input {
-   border-bottom: 2px solid #323232;
-   padding: 10px;
-   font-size: .9rem;
-   margin-bottom: 40px;
-  }
-
-   input:focus {
-   border-color: #ff0000;
-  }
-
-   input[type="submit"] {
-   background-color: #ff0000;
-   color: #FFF;
-   border: none;
-   border-radius: 20px;
-   height: 40px;
-   cursor: pointer;
-  }
-
-   #agreement {
-   margin-right: 5px;
-  }
-
-   #agreement, #agreement-label {
-   display: inline-block;
-   width: auto;
-  }
-
-   .error-validation {
-   color: #ff1a1a;
-   position: absolute;
-   top: 57px;
-   font-size: 12px;
-  }
-
-   .template {
-   display: none;
-  }
- </style>
-
+  <link rel="stylesheet" href="stylesheets/stylesheet.css">
+  
  <script>
    class Validator {
 
@@ -314,9 +204,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Form de Registro com validações em JS</title>
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
-  <div id="main-container">
+  <div id="main-container2">
     <h1>CADASTRE-SE</h1>
     <form id="register-form" action="">
      <div class="half-box spacing">
@@ -418,7 +309,7 @@
         <input type="checkbox" name="agreement" id="agreement">
         <label for="agreement" id="agreement-label">Eu li e aceito os <a href="X">termos de uso</a></label>
       </div>
-      <div class="full-box">
+      <div class="btn-box">
         <input id="btn-submit" type="submit" color="#ff0000" value="Registrar-se">
       </div>
     </form>
