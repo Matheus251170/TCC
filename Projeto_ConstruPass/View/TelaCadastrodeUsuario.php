@@ -309,7 +309,7 @@
         <input type="checkbox" name="agreement" id="agreement">
         <label for="agreement" id="agreement-label">Eu li e aceito os <a href="X">termos de uso</a></label>
       </div>
-      <div class="btn-box">
+      <div class="full-box">
         <input id="btn-submit" type="submit" color="#ff0000" value="Registrar-se">
       </div>
     </form>
