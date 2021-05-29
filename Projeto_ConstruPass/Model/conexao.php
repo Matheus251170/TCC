@@ -6,7 +6,7 @@ session_start();
 
 $host='localhost';
 $user='root';
-$senha='';
+$senha='root';
 $banco='bd_construpass';
 
 global $pdo;
