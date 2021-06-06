@@ -33,7 +33,20 @@
       <button class="btm" type="submit">Login</button>
       <span style="font-size: 12px;">Esqueceu sua <a style="font-size: 12px;" href="??">senha</a>?</span>
         <br>
-    </div>
+
+      </div>
+
+      <div class="contai">
+        <input style="border-radius: 6px; width:350px; margin-bottom: auto;" type="email" placeholder="E-mail" name="email" required>
+        <input style="border-radius: 6px; width:350px" type="password" placeholder="Senha" name="psw" required>
+      </div>
+      
+      <div class="form">
+          
+        <button class="btm" type="submit">Login</button>
+        <span style="font-size: 12px;">Esqueceu sua <a style="font-size: 12px;" href="??">senha</a>?</span>
+          <br>
+      </div>
 
     <div class="under" style="background-color:#252222">
         <p style="color: #ffffff;">Ainda não tem conta?</p>
