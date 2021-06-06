@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+require '../Model/conexao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

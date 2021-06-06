@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-unset($_SESSION['id_login']);
+unset($_SESSION['id_cliente']);
 
 header("Location: TelaLogin.php");
 

@@ -4,37 +4,37 @@ class user
 {
 
 
-    public function login($email, $psw)
+    public function login($email, $senha)
     {
         global $pdo;
 
-        $sql = "SELECT * FROM tb_login WHERE email = :email and senha = :psw";
+        $sql = "SELECT * FROM tb_cliente WHERE email_cliente = :email AND senha_user = :senha";
         $sql = $pdo -> prepare($sql);
         $sql -> bindValue("email", $email);
-        $sql -> bindValue("psw", md5($psw));
+        $sql -> bindValue("senha", $senha);
         $sql -> execute();
 
         if($sql -> rowCount() > 0)
         {
             $dado = $sql -> fetch();
 
-            $_SESSION['id_login'] = $dado['id_login'];
-
-            return true;
+            //$_SESSION['id_cliente'] = $dado['id_cliente'];
+            echo $dado['id_cliente'];
+            //return true;
         }
-        else
+        /*else
         {
             return false;
         }
     }
 
-    public function logged($id)
+    /*public function logged($id)
     {
         global $pdo;
 
         $array = array();
 
-        $sql = "SELECT nome FROM tb_login WHERE id_login = :id";
+        $sql = "SELECT nome_cliente FROM tb_cliente WHERE id_cliente = :id";
         $sql = $pdo -> prepare($sql);
         $sql -> bindValue("id", $id);
         $sql -> execute();
@@ -45,7 +45,7 @@ class user
         }
 
         return $array;
-    }
+    }*/
 }
 
 ?>
