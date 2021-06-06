@@ -1,3 +1,10 @@
+<?php
+
+    session_start();
+    require '../Model/conexao.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -209,36 +216,35 @@
 
 
 
-</head>
 
-
-</script>
-
-</head>
 
 <body>
-  <!DOCTYPE html>
-  <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form de Registro com validações em JS</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
+   <div>
+      <?php
+        
+        if(isset($_SESSION['msg'])){
+          echo $_SESSION['msg'];
+          unset($_SESSION['msg']);
+        }
+        if(isset($_SESSION['cadastrado'])){
+          echo $_SESSION['cadastrado'];
+          unset($_SESSION['cadastrado']);
+        }
+      
+      ?>
+    </div>
 
-  <body>
     <div id="main-container">
       <h1>CADASTRE-SE</h1>
-      <form id="register-form" action="">
+      <form id="register-form" action="cadastrar.php" method="POST">
         <div class="half-box spacing">
           <label for="name">Nome Completo</label>
-          <input type="text" name="nomecliente" id="nomecliente" placeholder="Digite seu nome completo" data-required data-min-length="3" data-max-length="16">
+          <input type="text" name="nomeCliente" id="nomeCliente" placeholder="Digite seu nome completo" data-required data-min-length="3" data-max-length="16">
         </div>
         <div class="half-box">
           <label for="cpf">CPF</label>
-          <input type="text" name="cpfcliente" id="cpfcliente" placeholder="Digite o seu CPF" maxlength="14" data-required>
+          <input type="text" name="cpfCliente" id="cpfCliente" placeholder="Digite o seu CPF" maxlength="14" data-required>
         </div>
         <div class="half-box spacing">
           <label for="uf">UF</label>
@@ -276,40 +282,40 @@
         </div>
         <div class="half-box">
           <label for="rg">RG</label>
-          <input type="text" name="rgcliente" id="rgcliente" placeholder="Digite o seu RG" maxlength="12" data-password-validate data-required>
+          <input type="text" name="rgCliente" id="rgCliente" placeholder="Digite o seu RG" maxlength="12" data-password-validate data-required>
         </div>
         <div class="half-box spacing">
           <label for="telefone">Telefone</label>
-          <input type="text" name="telefoneusuario" id="telefonecliente" placeholder="Digite número do seu Telefone" maxlength="14" data-password-validate data-required>
+          <input type="text" name="telefoneCliente" id="telefoneCliente" placeholder="Digite número do seu Telefone" maxlength="14" data-password-validate data-required>
 
         </div>
         <div class="half-box">
           <label for="celular">Celular</label>
-          <input type="text" name="celularcliente" id="celularcliente" placeholder="Digite o número do seu Celular" maxlength="15" data-equal="password">
+          <input type="text" name="celularCliente" id="celularCliente" placeholder="Digite o número do seu Celular" maxlength="15" data-equal="password">
         </div>
         <div class="half-box spacing">
           <label for="cep">CEP</label>
-          <input type="text" name="cepcliente" id="cepcliente" placeholder="Digite o seu CEP" maxlength="10" data-equal="password">
+          <input type="text" name="cepCliente" id="cepCliente" placeholder="Digite o seu CEP" maxlength="10" data-equal="password">
         </div>
         <div class="half-box">
           <label for="email">E-mail</label>
-          <input type="email" name="emailcliente" id="emailcliente" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
+          <input type="email" name="emailCliente" id="emailCliente" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
         </div>
         <div class="half-box spacing">
           <label for="endereco">Endereço Completo</label>
-          <input type="text" name="enderecocliente" id="enderecocliente" placeholder="Digite seu endereço" data-password-validate data-required>
+          <input type="text" name="enderecoCliente" id="enderecoCliente" placeholder="Digite seu endereço" data-password-validate data-required>
         </div>
         <div class="half-box">
           <label for="numerocasa">N°</label>
-          <input type="text" name="numerocasacliente" id="numerocasacliente" placeholder="numero da sua casa" maxlength="4" data-equal="password">
+          <input type="text" name="numeroCasaCliente" id="numeroCasaCliente" placeholder="numero da sua casa" maxlength="4" data-equal="password">
         </div>
         <div class="half-box spacing">
           <label for="senha">Senha</label>
-          <input type="password" name="senhacliente" id="senhacliente" placeholder="Digite sua senha" minlength="10" data-password-validate data-required>
+          <input type="password" name="senhaCliente" id="senhaCliente" placeholder="Digite sua senha" minlength="10" data-password-validate data-required>
         </div>
         <div class="half-box">
           <label for="senhaconfirmada">Confirmação de senha</label>
-          <input type="password" name="senhaconfirmadacliente" id="senhaconfirmadacliente" placeholder="Digite novamente sua senha" minlength="10" data-equal="password">
+          <input type="password" name="senhaConfirmadaCliente" id="senhaConfirmadaCliente" placeholder="Digite novamente sua senha" minlength="10" data-equal="password">
         </div>
 
         <div>

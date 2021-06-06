@@ -3,44 +3,66 @@
     session_start();
     require '../Model/conexao.php';
 
-    $nome_func = mysql_real_escape_string($conexao, trim($_POST['nomeusuario']));
-    $cpf_func = mysql_real_escape_string($conexao, trim($_POST['cpfusuario']));
-    $uf_func = mysql_real_escape_string($conexao, trim($_POST['uf']));
-    $rg_func = mysql_real_escape_string($conexao, trim($_POST['rgcliente']));
-    $escolaridade_func = mysql_real_escape_string($conexao, trim($_POST['escolaridade']));
-    $profissao_func = mysql_real_escape_string($conexao, trim($_POST['profissaousuario']));
-    $telefone_func = mysql_real_escape_string($conexao, trim($_POST['telefoneusuario']));
-    $celular_func = mysql_real_escape_string($conexao, trim($_POST['celularusuario']));
-    $cep_func = mysql_real_escape_string($conexao, trim($_POST['cepusuario']));
-    $email_func = mysql_real_escape_string($conexao, trim($_POST['emailusuario']));
-    $numerocasa_func = mysql_real_escape_string($conexao, trim($_POST['numerocasausuario']));
-    $senha_func = mysql_real_escape_string($conexao, trim($_POST['senhausuario']));
-    $senhaconfirmada_func = mysql_real_escape_string($conexao, trim(md5($_POST['senhaconfirmadausuario'])));
+    //recebe os dados do formulario de cliente
 
+    $nomeCliente = filter_input(INPUT_POST, 'nomeCliente', FILTER_SANITIZE_STRING);
+    $emailCliente = filter_input(INPUT_POST, 'emailCliente', FILTER_SANITIZE_EMAIL);
+    $rgCliente = filter_input(INPUT_POST, 'rgCliente', FILTER_SANITIZE_STRING);
+    $telefoneCliente = filter_input(INPUT_POST, 'telefoneCliente', FILTER_SANITIZE_STRING);
+    $celularCliente = filter_input(INPUT_POST, 'celularCliente', FILTER_SANITIZE_STRING);
+    $enderecoCliente = filter_input(INPUT_POST, 'enderecoCliente', FILTER_SANITIZE_STRING);
+    $cpfCliente = filter_input(INPUT_POST, 'cpfCliente', FILTER_SANITIZE_STRING);
+    $cepCliente = filter_input(INPUT_POST, 'cepCliente', FILTER_SANITIZE_STRING);
+    $senhaCliente = filter_input(INPUT_POST, 'senhaCliente', FILTER_SANITIZE_STRING);
+    $senhaConfirmadaCliente = filter_input(INPUT_POST, 'senhaConfirmadaCliente', FILTER_SANITIZE_STRING);
+    $numeroCasaCliente = filter_input(INPUT_POST, 'numeroCasaCliente', FILTER_SANITIZE_STRING);
 
-    $sql = "SELECT COUNT (*) AS TOTAL FROM tb_funcionario WHERE cpf_funcionario = '$cpf_func'";
-    $result = mysqli_query($conexao, $sql);
-    $row = mysqli_fetch_assoc($result);
+    //valida as senhas
 
+    if($senhaCliente != $senhaConfirmadaCliente){
 
-    if($row['TOTAL'] == 1)
-    {
-        $_SESSION['usuario_existe'] = true;
-        header('Location: TelaCadastrodeUsuario.php');
-        exit;
+        $_SESSION['msg'] = "Senhas diferentes!";
+        header("Location: TelaCadastrodeCliente.php");
     }
 
-    $sql = "INSERT INTO tb_funcionario (nm_funcionario, cpf_funcionario, rg_funcionario, formacao_funcionario, numero_imovel, email_funcionario, senha_funcionario) 
-            VALUES ($nome_func, $cpf_func, $rg_func, $escolaridade_func, $numerocasa_func, $email_func, $senha_func, NOW())";
+
+    //inserindo dados na tabela cliente
+
+        $sql = "INSERT INTO tb_cliente(nome_cliente, cpf_cliente, senha_user, rg_cliente, numero_imovel, complemento_endereco, cep_endereco, telefone_contato, celular_contato, email_cliente) VALUES (:nomeCliente, :cpfCliente, :senhaCliente, :rgCliente, :numeroCasaCliente, :enderecoCliente, :cepCliente, :telefoneCliente, :celularCliente, :emailCliente)";
+    
+        $insert_query = $pdo->prepare($sql);
+        $insert_query->bindParam(':nomeCliente', $nomeCliente);
+        $insert_query->bindParam(':cpfCliente', $cpfCliente);
+        $insert_query->bindParam(':senhaCliente', $senhaCliente);
+        $insert_query->bindParam(':rgCliente', $rgCliente);
+        $insert_query->bindParam(':numeroCasaCliente', $numeroCasaCliente);
+        $insert_query->bindParam(':enderecoCliente', $enderecoCliente);
+        $insert_query->bindParam(':cepCliente', $cepCliente);
+        $insert_query->bindParam(':telefoneCliente', $telefoneCliente);
+        $insert_query->bindParam(':celularCliente', $celularCliente);
+        $insert_query->bindParam(':emailCliente', $emailCliente);
 
 
-    if($conexao -> query($sql) === TRUE)
-    {
-        $_SESSION['status_cad'] = TRUE;
+       
+       
+       
+       
+       
+       
+       
+        if($senhaCliente != $senhaConfirmadaCliente){
 
-    }
-
-    $conexao -> close();
-    header('Location: TelaCadastrodeUsuario.php');
-    exit;
-?>
+            $_SESSION['msg'] = "Senhas diferentes!";
+            header("Location: TelaCadastrodeCliente.php");
+        }else{
+                
+            if($insert_query->execute())
+            {
+                $_SESSION['cadastrado'] = "<p style = 'color: green; text-align: center;'> Usuário cadastrado!</p>";
+                header("Location: TelaCadastrodeCliente.php");
+    
+            }else{
+                $_SESSION['cadastrado'] = "<p style = 'color: red; text-align: center;'> Erro ao cadastrar!</p>";
+                header("Location: TelaCadastrodeCliente.php");
+            }
+        }

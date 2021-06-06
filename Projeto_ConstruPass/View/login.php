@@ -2,20 +2,20 @@
 
 require '../Model/conexao.php';
 
-if(isset($_POST['email']) && !empty($_POST['email']) && (isset($_POST['email']) && !empty($_POST['psw'])))
+if(isset($_POST['email']) && !empty($_POST['email']) && (isset($_POST['senha']) && !empty($_POST['senha'])))
     
     {
-        require '../model/conexao.php';
-        require '../model/user.class.php';
+        require '../Model/conexao.php';
+        require '../Model/user.class.php';
 
         $u = new user();
 
         $email = addslashes($_POST['email']);
-        $psw = addslashes($_POST['psw']);
+        $senha = addslashes($_POST['senha']);
 
-        if($u -> login($email, $psw) == true)
+        /*if($u -> login($email, $senha) == true)
         {
-            if(isset($_SESSION['id_login']))
+            if(isset($_SESSION['id_cliente']))
             {
                 header("Location: home.php");
             }
@@ -28,11 +28,9 @@ if(isset($_POST['email']) && !empty($_POST['email']) && (isset($_POST['email']) 
         else
         {
             header("Location: TelaLogin.php");
-        }
-    }
+        }*/
 
-    else
+    }else{
 
-    {
         header("Location: TelaLogin.php");
     }

@@ -15,7 +15,7 @@
     <div class="wrapper row1">
       <header id="header" class="hoc clear">
         <div id="logo" class="fl_left">
-          <h1><a href="index.php">ConstruPass</a></h1>
+          <h1><a href="Index.php">ConstruPass</a></h1>
         </div>
         <nav id="mainav" class="fl_right">
           <ul class="clear">
@@ -24,8 +24,8 @@
             <li><a href="AboutUs.php">Sobre nós</a></li>
             <li><a class="drop" href="#">Registrar-se</a>
               <ul>
-                <li><a href="TelaCadastroCliente.php">Registro Cliente</a></li>
-                <li><a href="TelaCadastroFuncionario.php">Registro Funcionário</a>
+                <li><a href="TelaCadastrodeCliente.php">Registro Cliente</a></li>
+                <li><a href="TelaCadastrodeFuncionario.php">Registro Funcionário</a>
               </ul>
             </li>
             <li><a href="TelaLogin.php">Login</a></li>

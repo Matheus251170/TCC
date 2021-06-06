@@ -15,20 +15,20 @@
     <div class="wrapper row1">
       <header id="header" class="hoc clear">
         <div id="logo" class="fl_left">
-          <h1><a href="index.html">ConstruPass</a></h1>
+          <h1><a href="Index.php">ConstruPass</a></h1>
         </div>
         <nav id="mainav" class="fl_right">
           <ul class="clear">
-            <li class="active"><a href="index.html"></a></li>
-            <li><a href="Index.html">Início</a></li>
-            <li><a href="AboutUs.html">Sobre nós</a></li>
+            <li class="active"><a href="Index.php"></a></li>
+            <li><a href="Index.php">Início</a></li>
+            <li><a href="AboutUs.php">Sobre nós</a></li>
             <li><a class="drop" href="#">Registrar-se</a>
               <ul>
-                <li><a href="TelaCadastroCliente.html">Registro Cliente</a></li>
-                <li><a href="TelaCadastroFuncionario.html">Registro Funcionário</a>
+                <li><a href="TelaCadastroCliente.php">Registro Cliente</a></li>
+                <li><a href="TelaCadastroFuncionario.php">Registro Funcionário</a>
               </ul>
             </li>
-            <li><a href="TelaLogin.html">Login</a></li>
+            <li><a href="TelaLogin.php">Login</a></li>
           </ul>
         </nav>
       </header>

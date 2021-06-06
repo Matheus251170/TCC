@@ -1,19 +1,18 @@
 <?php
 
 
-session_start();
-
-
 $host='localhost';
 $user='root';
 $senha='root';
-$banco='bd_construpass';
+$banco='bd_construpass1';
+
+
 
 global $pdo;
 
 try
     {
-    
+        //$pdo = mysqli_connect($host, $user, $senha, $banco);
         $pdo = new PDO("mysql:dbname=".$banco."; host=".$host, $user, $senha);
         $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
