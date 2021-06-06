@@ -20,7 +20,7 @@
 
       <div class="contai">
         <input style="border-radius: 6px; width:350px; margin-bottom: auto;" type="email" placeholder="E-mail" name="email" required>
-        <input style="borde r-radius: 6px; width:350px" type="password" placeholder="Senha" name="psw" required>
+        <input style="border-radius: 6px; width:350px" type="password" placeholder="Senha" name="psw" required>
       </div>
       
       <div class="form">
