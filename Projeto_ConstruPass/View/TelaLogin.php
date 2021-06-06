@@ -4,7 +4,7 @@
     <meta charset="UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -19,8 +19,8 @@
       </div>
 
       <div class="contai">
-        <input style="border-radius: 6px; width:350px; margin-bottom: auto;" type="text" placeholder="E-mail" name="email" required>
-        <input style="border-radius: 6px; width:350px" type="password" placeholder="Senha" name="psw" required>
+        <input style="border-radius: 6px; width:350px; margin-bottom: auto;" type="email" placeholder="E-mail" name="email" required>
+        <input style="borde r-radius: 6px; width:350px" type="password" placeholder="Senha" name="psw" required>
       </div>
       
       <div class="form">
