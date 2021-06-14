@@ -1,4 +1,8 @@
-<h1 align=center>ConstruPASS</h1>
- <p>My final paper development in ETEC Guarulhos.</p>
+<h1 align=center>ConstruPass</h1>
+ <p align=justify>Somos uma equipe dedicada com o objetivo de trazer mais facilidade de contato entre trabalhadores da área da construção e pessoas interessadas nesses serviços.
 
- <p>This is my first repository. :)</p>
+Surgimos da necessidade de virtualizar a contratação de serviços em uma área tão afetada pela pandemia. Aqui você tem uma oportunidade de divulgar seu trabalho ou buscar por alguém que possa atender sua demanda.
+
+O mercado de construção civil tem sido um dos mais prejudicados durante o tempo de pandemia, Com estandes de vendas fechados, demanda reduzida e obras em ritmo lento, os profissionais da área tem tido cada vez mais dificuldades de arranjar maneiras para circundar tais eventos, podemos ver os efeitos que esta casualidade tem causado nas nossas vidas não apenas interferindo no convívio social mas também nos processos econômicos podemos observar que a crise econômica no período de pandemia está tomando proporções nunca antes vistas pelo o que é constatado por especialistas ao redor o mundo, esse fator é especialmente mais agravante em relação ao nosso pais pois sua economia já estava frágil entes do período de isolamento.
+
+Foi observando esta problematização que nós da ConstruPass decidimos desenvolver um projeto que amenizasse os efeitos negativos trazidos por esta eventualidade, trazemos a proposta de um site que providencia um sistema de machtmaking entre clientes que procuram um profissional capacitado e profissionais que estão dispostos a oferecer seus serviços, nosso site disponibiliza uma interface intuitiva e de fácil compreensão mas que também apresente uma alta competência profissional buscando a satisfação de nossos clientes..</p>
