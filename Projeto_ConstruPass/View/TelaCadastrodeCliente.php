@@ -221,8 +221,12 @@
 <body>
 
    <div>
+   
       <?php
-        
+        if(isset($_SESSION['erro'])){
+          echo $_SESSION['erro'];
+          unset($_SESSION['erro']);
+        }
         if(isset($_SESSION['msg'])){
           echo $_SESSION['msg'];
           unset($_SESSION['msg']);
@@ -237,7 +241,7 @@
 
     <div id="main-container">
       <h1>CADASTRE-SE</h1>
-      <form id="register-form" action="cadastrar.php" method="POST">
+      <form id="register-form" action="cadastrarClient.php" method="POST">
         <div class="half-box spacing">
           <label for="name">Nome Completo</label>
           <input type="text" name="nomeCliente" id="nomeCliente" placeholder="Digite seu nome completo" data-required data-min-length="3" data-max-length="16">
