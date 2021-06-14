@@ -17,14 +17,13 @@
     $senhaConfirmadaCliente = filter_input(INPUT_POST, 'senhaConfirmadaCliente', FILTER_SANITIZE_STRING);
     $numeroCasaCliente = filter_input(INPUT_POST, 'numeroCasaCliente', FILTER_SANITIZE_STRING);
 
-    //valida as senhas
-
-    if($senhaCliente != $senhaConfirmadaCliente){
-
-        $_SESSION['msg'] = "Senhas diferentes!";
-        header("Location: TelaCadastrodeCliente.php");
+    $sql = mysqli_query($pdo, "SELECT * FROM tb_cliente WHERE cpf_cliente = $cpfCliente");
+    
+    if(mysqli_num_rows($sqlCliente) == 1){
+    
+        $_SESSION['erro'] = "<p style = 'color: red; text-align: center;'>CPF já cadastrado!</p>";
+        header("Location: TelaCadastrodeCliente");
     }
-
 
     //inserindo dados na tabela cliente
 
@@ -41,13 +40,13 @@
         $insert_query->bindParam(':telefoneCliente', $telefoneCliente);
         $insert_query->bindParam(':celularCliente', $celularCliente);
         $insert_query->bindParam(':emailCliente', $emailCliente);  
-       
-       
+  
         if($senhaCliente != $senhaConfirmadaCliente){
 
-            $_SESSION['msg'] = "Senhas diferentes!";
+            $_SESSION['msg'] = "<p style = 'color: red; text-align: center;'>Senhas diferentes!</p>";
             header("Location: TelaCadastrodeCliente.php");
-        }else{
+        }
+        else{
                 
             if($insert_query->execute())
             {
@@ -58,33 +57,4 @@
                 $_SESSION['cadastrado'] = "<p style = 'color: red; text-align: center;'> Erro ao cadastrar!</p>";
                 header("Location: TelaCadastrodeCliente.php");
             }
-
-            //----------------------------------------------------------------------------------------------------
-
-
-    
-                $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
-                $usuario = mysqli_real_escape_string($conexao, trim($_POST['usuario']));
-                $senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
-
-                $sql = "select count(*) as total from usuario where usuario = '$usuario'";
-                $result = mysqli_query($conexao, $sql);
-                $row = mysqli_fetch_assoc($result);
-
-                if($row['total'] == 1) {
-                    $_SESSION['usuario_existe'] = true;
-                    header('Location: cadastro.php');
-                    exit;
-                }
-
-                $sql = "INSERT INTO usuario (nome, usuario, senha, data_cadastro) VALUES ('$nome', '$usuario', '$senha', NOW())";
-
-                if($conexao->query($sql) === TRUE) {
-                    $_SESSION['status_cadastro'] = true;
-                }
-
-                $conexao->close();
-
-                header('Location: cadastro.php');
-                exit;
         }
