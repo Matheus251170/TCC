@@ -18,15 +18,11 @@
           <h1><a href="Index.php">ConstruPass</a></h1>
         </div>
         <nav id="mainav" class="fl_right">
-          <ul class="clear">
-            <li class="active"><a href="Index.php"></a></li>
+        <ul class="clear">
+            <li class="active"><a href="index.php"></a></li>
             <li><a href="Index.php">Início</a></li>
             <li><a href="AboutUs.php">Sobre nós</a></li>
-            <li><a class="drop" href="#">Registrar-se</a>
-              <ul>
-                <li><a href="TelaCadastroCliente.php">Registro Cliente</a></li>
-                <li><a href="TelaCadastroFuncionario.php">Registro Funcionário</a>
-              </ul>
+            <li><a href="TelaCadastroUsuario.php">Registrar-se</a>
             </li>
             <li><a href="TelaLogin.php">Login</a></li>
           </ul>

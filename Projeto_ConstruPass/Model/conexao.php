@@ -4,7 +4,7 @@
 $host='localhost';
 $user='root';
 $senha='root';
-$banco='bd_construpass1';
+$banco='bd_construpass';
 
 
 

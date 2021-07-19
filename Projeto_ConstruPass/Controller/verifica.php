@@ -3,14 +3,14 @@
     session_start();
     require '../Model/conexao.php';
 
-    if(isset($_SESSION['id_cliente']) && !empty($_SESSION['id_cliente']))
+    if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']))
     {
         require_once '../Model/user.class.php';
         $u = new user();
 
-        $listLogged = $u -> logged($_SESSION['id_cliente']);
+        $listLogged = $u -> logged($_SESSION['id_usuario']);
 
-        $nameUser = $listLogged['nome_cliente'];
+        $nameUser = $listLogged['nome'];
     }
     else
     {
