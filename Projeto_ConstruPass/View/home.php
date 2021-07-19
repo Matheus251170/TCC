@@ -1,6 +1,6 @@
 <?php
 
-  require '../Controller/verifica.php';
+ require '../Controller/verifica.php';
 
   if(isset($_SESSION['id_login']) && !empty($_SESSION['id_login'])):
 

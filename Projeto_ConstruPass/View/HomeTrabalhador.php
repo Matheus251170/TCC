@@ -1,3 +1,9 @@
+<?php
+
+  require '../Controller/verifica.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,18 +23,17 @@
     <div class="wrapper row1">
       <header id="header" class="hoc clear">
         <div id="logo" class="fl_left">
-          <h1><a href="index.html">ConstruPass</a></h1>
+          <h1><a href="HomeTrabalhador.php">ConstruPass</a></h1>
         </div>
         <nav id="mainav" class="fl_right">
           <ul class="clear">
             <li class="active"><a href="index.html"></a></li>
-            <li><a href="Index.html">Início</a></li>
-            <li><a href="AboutUs.html">Sobre nós</a></li>
+            <li><a href="HomeTrabalhador.php">Início</a></li>
             <li><a class="drop" href="#">Usuário</a>
               <ul>
-                <li><a href="">Opções</a></li>
-                <li><a href="">Carteira</a></li>
-                  <li><a href="">Últimos serviços</a>
+                <li><a href="TelaPerfil.php">Perfil</a></li>
+                <li><a href="Carteira.php">Carteira</a></li>
+                <li><a href="logout.php">Sair</a></li>
               </ul>
             </li>
            
@@ -48,7 +53,7 @@
               <strong>Nome do trabalhador</strong>
 
               <p>Descrição do trabalhador</p>
-            <button>Saber Mais</button>
+            <a href="TelaPerfil.php" style="text-decoration: none; color: white;"><button>Saber Mais</button></a>
             </br>
               </div>
         </li>

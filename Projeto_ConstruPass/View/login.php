@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 require '../Model/conexao.php';
 
 if(isset($_POST['email']) && !empty($_POST['email']) && (isset($_POST['senha']) && !empty($_POST['senha'])))
@@ -11,26 +12,30 @@ if(isset($_POST['email']) && !empty($_POST['email']) && (isset($_POST['senha']) 
         $u = new user();
 
         $email = addslashes($_POST['email']);
-        $senha = addslashes($_POST['senha']);
-
-        /*if($u -> login($email, $senha) == true)
+        $senha = md5(addslashes($_POST['senha']));
+        
+        
+        if($u -> login($email, $senha) == true)
         {
-            if(isset($_SESSION['id_cliente']))
+            if(isset($_SESSION['id_usuario']))
             {
-                header("Location: home.php");
+                header("Location: TelaEscolhadeCadastro.php");
             }
             else
             {
+                $_SESSION['erro'] = "<div class='alert alert-danger' role='alert'>Email ou senha incorretos!</div>";
                 header("Location: TelaLogin.php");
+
             }
 
         }
         else
         {
+            $_SESSION['erro'] = "<div class='alert alert-danger' role='alert'>Email ou senha incorretos!</div>";
             header("Location: TelaLogin.php");
-        }*/
+        }
 
     }else{
-
+        $_SESSION['erro'] = "<div class='alert alert-danger' role='alert'>Preencha os campos corretamente!</div>";
         header("Location: TelaLogin.php");
     }

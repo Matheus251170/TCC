@@ -22,11 +22,7 @@
             <li class="active"><a href="index.php"></a></li>
             <li><a href="Index.php">Início</a></li>
             <li><a href="AboutUs.php">Sobre nós</a></li>
-            <li><a class="drop" href="#">Registrar-se</a>
-              <ul>
-                <li><a href="TelaCadastrodeCliente.php">Registro Cliente</a></li>
-                <li><a href="TelaCadastrodeFuncionario.php">Registro Funcionário</a>
-              </ul>
+            <li><a href="TelaCadastroUsuario.php">Registrar-se</a>
             </li>
             <li><a href="TelaLogin.php">Login</a></li>
           </ul>
